@@ -11,7 +11,9 @@ inquirer.prompt(
             type: 'input',
             name: 'projectName',
             message: 'What is the name of your project?'
-        },
+        }
+        /*
+        ,
         {
             type: 'checkbox',
             name: 'tableOfContents',
@@ -24,10 +26,11 @@ inquirer.prompt(
                         title: 'Description',
                         hint: ''
                     }
-                     
+                    
                 }
             ]
         }
+        */
 
     ]
 )
