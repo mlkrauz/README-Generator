@@ -1,36 +1,9 @@
 //The way we were taught to do it
-//const inquirer = require("inquirer");
+const inquirer = require("inquirer");
+const fs = require('fs');
+const questions = require('./src/questions');
 
-//the cool ES6 way vscode recommended it be done
-import inquirer from 'inquirer';
-import fs from 'fs';
 
 inquirer.prompt(
-    [
-        {
-            type: 'input',
-            name: 'projectName',
-            message: 'What is the name of your project?'
-        }
-        /*
-        ,
-        {
-            type: 'checkbox',
-            name: 'tableOfContents',
-            message: 'What would you like included in your Table of Contents?',
-            choices: [
-                {
-                    //does not work
-                    name: `${value.title}${value.hint}`,
-                    value: {
-                        title: 'Description',
-                        hint: ''
-                    }
-                    
-                }
-            ]
-        }
-        */
-
-    ]
+    questions
 )

@@ -19,6 +19,7 @@ RETURNED:
 function createChoice(userValue, userHint, inquirerParams) {
     let validParams = false;
     const validKeysList = ['checked', 'disabled', 'short'];
+    //take in a key; return true/false depending on validKeysList contains that key
     const inquirerParamsValidator = (key) => validKeysList.includes(key);
 
     //input validations
@@ -29,6 +30,7 @@ function createChoice(userValue, userHint, inquirerParams) {
         userHint = '';
     }
     if (typeof inquirerParams === 'object') {
+        //if ALL the properties keys of inquiererParams return true when validated against inquirerParamsValidator
         if (Object.keys(inquirerParams).every(inquirerParamsValidator)) {
             validParams = true;
         } else {
@@ -43,7 +45,7 @@ function createChoice(userValue, userHint, inquirerParams) {
         name: `${userValue}${userHint}`,
         value: {
             value: userValue,
-            hint: userHint
+            //hint: userHint
         }
     }
 
