@@ -5,5 +5,6 @@ const questions = require('./src/questions');
 
 
 inquirer.prompt(
-    questions
+    questions.questionBank
 )
+.then((answers) => console.log(answers))

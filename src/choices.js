@@ -43,10 +43,7 @@ function createChoice(userValue, userHint, inquirerParams) {
     //create our object to return
     let choiceObject = {
         name: `${userValue}${userHint}`,
-        value: {
-            value: userValue,
-            //hint: userHint
-        }
+        value: userValue
     }
 
     //did the user pass in a valid inquirerParams object?

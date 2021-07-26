@@ -1,4 +1,4 @@
-const createChoice = require("./choices");
+const choices = require("./choices");
 
 const questionBank = [
     {
@@ -11,15 +11,15 @@ const questionBank = [
         name: 'tableOfContents',
         message: 'What would you like included in your Table of Contents?',
         choices: [
-            createChoice('Description', '', {checked: true}),
-            createChoice('Table of Contents', '', {checked: true}),
-            createChoice('Media', ' --Images and videos'),
-            createChoice('Installation', '', {checked: true}),
-            createChoice('Usage', '', {checked: true}),
-            createChoice('License', '', {checked: true}),
-            createChoice('Contributing', '', {checked: true}),
-            createChoice('Tests', '', {checked: true}),
-            createChoice('Questions', ' --and contact info', {checked: true})
+            choices.createChoice('Description', '', {checked: true}),
+            choices.createChoice('Table of Contents', '', {checked: true}),
+            choices.createChoice('Media', ' --Images and videos'),
+            choices.createChoice('Installation', '', {checked: true}),
+            choices.createChoice('Usage', '', {checked: true}),
+            choices.createChoice('License', '', {checked: true}),
+            choices.createChoice('Contributing', '', {checked: true}),
+            choices.createChoice('Tests', '', {checked: true}),
+            choices.createChoice('Questions', ' --and contact info', {checked: true})
         ]
     },
 ];
