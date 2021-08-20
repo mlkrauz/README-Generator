@@ -1,8 +1,10 @@
 /*
 A function which returns a choice object for inquirer. 
 INPUTS:
-    'value' : REQUIRED. 
-        Must be a string. This is the final value used as an answer.
+    'name' : REQUIRED.
+        Must be a string. This is used for inquirer's name property.
+    'value' : REQUIRED.
+        Can be of any type. This is the final value used as an answer.
     'hint' : REQUIRED.
         Must be a string. This will be additional information viewed in the commandline only.
         If omitted, it will be an empty string. In a way, that makes this param optional,
@@ -16,15 +18,15 @@ RETURNED:
     a 'value' object to be passed as an answer,
     plus any inquerer params passed in, such as 'checked' or 'disabled'
 */
-function createChoice(userValue, userHint, inquirerParams) {
+function createChoice(name, userValue, userHint, inquirerParams) {
     let validParams = false;
     const validKeysList = ['checked', 'disabled', 'short'];
     //take in a key; return true/false depending on validKeysList contains that key
     const inquirerParamsValidator = (key) => validKeysList.includes(key);
 
     //input validations
-    if (typeof userValue !== 'string') {
-        throw new Error('Value passed in was not a string!');
+    if (typeof name !== 'string') {
+        throw new Error('Name passed in was not a string!');
     }
     if (typeof userHint !== 'string') {
         userHint = '';
@@ -42,7 +44,7 @@ function createChoice(userValue, userHint, inquirerParams) {
 
     //create our object to return
     let choiceObject = {
-        name: `${userValue}${userHint}`,
+        name: `${name}${userHint}`,
         value: userValue
     }
 
