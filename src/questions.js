@@ -1,6 +1,6 @@
 const choices = require("./choices");
 
-const questionBank = [
+const questionBank = () => [
     {
         type: 'input',
         name: 'projectName',
@@ -24,6 +24,4 @@ const questionBank = [
     },
 ];
 
-module.exports = {
-    questionBank
-}
+module.exports = questionBank()

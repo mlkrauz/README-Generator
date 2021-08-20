@@ -19,5 +19,8 @@
   "homepage": "https://github.com/mlkrauz/README-Generator#readme",
   "dependencies": {
     "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8"
   }
 }
