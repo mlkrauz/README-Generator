@@ -1,10 +1,25 @@
-//The way we were taught to do it
 const inquirer = require("inquirer");
 const fs = require('fs');
 const questions = require('./src/questions');
 
-
-inquirer.prompt(
-    questions
+//Prompt questions and recieve answers
+inquirer.prompt(questions)
+.then(
+    (answers) => buildReadme(answers)
 )
-.then((answers) => console.log(answers))
+
+/**
+ * //Takes in an inquirer answers object, and builds a readMe string.
+ * @param {Object} answers 
+ */
+function buildReadme(answers) {
+    console.log(answers)
+}
+
+/**
+ * //Takes in a string and generates a readme file.
+ * @param {String} readMeString 
+ */
+function generateReadme(readMeString) {
+    
+}
