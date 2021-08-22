@@ -44,15 +44,15 @@ async function buildReadme(answers) {
 
     // conditionally update our readMeStrings
     if (tableOfContents) {
-        let newTableOfContents = `## Table of Contents \n`
+        let newTableOfContents = `## Table of Contents\n`
 
         /**
         * @returns a single line of the table of contents in Markdown notation
         */
         const single_TOC_Line = (item) => {
             if (item.use_In_TOC) {
-                // return table of contents line
-                return  `- [${item.title}](## ${item.title})\n` 
+                // return table of contents line - replace spaces with hyphens and convert to lowercase to match github anchor links
+                return  `* [${item.title}](#${item.title.replaceAll(' ','-').toLowerCase()})\n` 
             } else {
                 // return empty string
                 return ''
@@ -77,7 +77,7 @@ async function buildReadme(answers) {
         readMeStrings.usage = `## Usage\n${usage}`
     }
     if (license) {
-        const defaultMessage = (license) => `## License\nThis project is licensed under '${license}'. Please see LICENSE.md for more info.`
+        const defaultMessage = (license) => `## License\nThis project is licensed under '${license}'. Please see LICENSE file for more info.`
 
         switch (license) {
             case 'MIT':
@@ -102,16 +102,14 @@ async function buildReadme(answers) {
         readMeStrings.contribute = `## Contributing\n${contribute}`
     }
     if (test) {
-        readMeStrings.test = `## Contributing\n${test}`
+        readMeStrings.test = `## Tests\n${test}`
     }
     if (github && email) {
-        readMeStrings.questions = `## Questions and Contact Info
-        - Github: (https://github.com/${github})
-        - Email: ${email}`
+        readMeStrings.questions = `## Questions and Contact Info\n* Github: https://github.com/${github}\n* Email: ${email}`
     }
 
     //Gets all readMeString values, removes empty strings, and joins what remains. A new line is inserted between each value.
-    return Object.values(readMeStrings).filter(element => element !== '').join('\n')
+    return Object.values(readMeStrings).filter(element => element !== '').join('\n\n')
 }
 
 /**
