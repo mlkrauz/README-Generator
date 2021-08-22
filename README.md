@@ -14,6 +14,7 @@ README-Generator is a node.js and npm powered project that provides a command li
 * [Questions and Contact Info](#questions-and-contact-info)
 
 ![Project media](./assets/Preview.png)
+A video of the project being ran can be found here: (https://drive.google.com/file/d/1rT2QOI0DWJiqeDvvXJsV6TLeckKpyrcC/view)
 
 ## Installation
 This package is not published to NPM at this time. To install, please download from github and unzip.
